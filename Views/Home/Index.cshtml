@@ -1,0 +1,43 @@
+@model AiReelGenerator.Models.InstagramAnalytics
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Instagram Analytics Dashboard</h1>
+
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card text-white bg-primary shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Followers</h5>
+                    <h2 class="card-text">@Model.FollowerCount.ToString("N0")</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-white bg-success shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Impressions</h5>
+                    <h2 class="card-text">@Model.Impressions.ToString("N0")</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-white bg-info shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Reach</h5>
+                    <h2 class="card-text">@Model.Reach.ToString("N0")</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-white bg-warning shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Profile Views</h5>
+                    <h2 class="card-text">@Model.ProfileViews.ToString("N0")</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

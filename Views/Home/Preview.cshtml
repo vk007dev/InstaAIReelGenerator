@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Preview Reel";
+    var latestVideo = ViewBag.LatestVideo as string;
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Preview Latest Reel</h1>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    <div class="row">
+        <div class="col-md-6 d-flex justify-content-center">
+            @if (!string.IsNullOrEmpty(latestVideo))
+            {
+                <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 360px;">
+                    <video width="100%" height="auto" controls autoplay loop class="rounded">
+                        <source src="@latestVideo" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-info w-100 text-center">
+                    No generated reels found yet.
+                </div>
+            }
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-dark text-white">
+                    Publish to Instagram
+                </div>
+                <div class="card-body">
+                    <form asp-action="Publish" method="post">
+                        <div class="mb-3">
+                            <label for="videoUrl" class="form-label">Video URL</label>
+                            <input type="text" class="form-control" id="videoUrl" name="videoUrl" value="@latestVideo" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="caption" class="form-label">Caption</label>
+                            <textarea class="form-control" id="caption" name="caption" rows="4">Check out our latest AI-generated Reel! 🚀&#10;&#10;#AI #Tech #SoftwareEngineering #DeveloperLife</textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100" @(string.IsNullOrEmpty(latestVideo) ? "disabled" : "")>
+                            Publish Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
