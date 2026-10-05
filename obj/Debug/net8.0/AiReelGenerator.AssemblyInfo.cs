@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AiReelGenerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb6ad471f950cca6ff0753ddba51ed9b35756354")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a675c86b2cd277f805e69ff7b99256d78e64b86")]
 [assembly: System.Reflection.AssemblyProductAttribute("AiReelGenerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AiReelGenerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
